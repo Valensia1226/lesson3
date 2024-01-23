@@ -27,14 +27,6 @@ public class Employee {
         this.age = age;
     }
 
-    public static void changeSalary(ArrayList<Employee> employees, int age, int increase){
-        for (Employee item: employees){
-            if(item.getAge() > age){
-                item.setSalary(item.getSalary()+increase);
-            }
-        }
-    }
-
     public static int compareDates(int year1, int month1, int day1, int year2, int month2, int day2){
         LocalDate date1 = LocalDate.of(year1, month1, day1);
         LocalDate date2 = LocalDate.of(year2, month2, day2);

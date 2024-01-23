@@ -1,8 +1,6 @@
 package lesson3;
 
 
-import lesson3.Employee;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -12,6 +10,10 @@ public class Main {
 
     static ArrayList<Employee> employees = new ArrayList<>();
 
+    /**
+     * Повысить зп всем старше 45 на 5к
+     * @param arr список сотрудников
+     */
     public static void changeSalary(ArrayList<Employee> arr) {
         for (Employee item : arr) {
             if (item.getAge() > 45) {
@@ -20,6 +22,12 @@ public class Main {
         }
     }
 
+    /**
+     * Повысить зп всем старше определенного возраста на определенную сумму
+     * @param arr список сотрудников
+     * @param age возраст, после которого повышается зп
+     * @param increase величина повышения
+     */
     public static void changeSalary(ArrayList<Employee> arr, int age, int increase) {
         for (Employee item : arr) {
             if (item.getAge() > age) {
@@ -34,17 +42,21 @@ public class Main {
         employees.add(new Employee(10000, 35));
         employees.add(new Employee(30000, 40));
         employees.add(new Employee(50000, 55));
-        changeSalary(employees);
+        employees.add(new Supervisor(80000, 70));
+
+        /*changeSalary(employees);
         for (Employee item : employees) {
             System.out.println(item.toString());
         }
         System.out.println("");
+
         changeSalary(employees, 30, 2500);
         for (Employee item : employees) {
             System.out.println(item.toString());
         }
-        System.out.println("");
-        Employee.changeSalary(employees, 30, 1200);
+        System.out.println("");*/
+
+        Supervisor.changeSalary(employees, 30, 1200);
         for (Employee item : employees) {
             System.out.println(item.toString());
         }
